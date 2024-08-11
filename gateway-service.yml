@@ -32,7 +32,7 @@ spring:
           filters:
             - RewritePath=/graphql/(?<path>.*), /$\{path}
         - id: licensing-service
-          uri: http://localhost:8080
+          uri: http://localhost:8083
           predicates:
             - Path=/license/**
           filters:
