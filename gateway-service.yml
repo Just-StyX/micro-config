@@ -20,19 +20,19 @@ spring:
       #   lowerCaseServiceId: true
       routes:
         - id: organization-service
-          uri: lb://localhost:8081
+          uri: http://localhost:8081
           predicates:
             - Path=/organization/**
           filters:
             - RewritePath=/organization/(?<path>.*), /$\{path}
         - id: graphql-service
-          uri: lb://localhost:8087
+          uri: http://localhost:8087
           predicates:
             - Path=/graphql/**
           filters:
             - RewritePath=/graphql/(?<path>.*), /$\{path}
         - id: licensing-service
-          uri: lb://localhost:8080
+          uri: http://localhost:8080
           predicates:
             - Path=/license/**
           filters:
