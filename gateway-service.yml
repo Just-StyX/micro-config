@@ -1,6 +1,6 @@
 server:
   port: 8072
- 
+
 eureka:
   instance:
     preferIpAddress: true
@@ -8,29 +8,35 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eurekaserver:8070/eureka/
-      
- 
+      defaultZone: http://localhost:8070/eureka/
+
+
 spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-        routes:
+      routes:
         - id: organization-service
-          uri: lb://organization-service
+          uri: lb://localhost:8081
           predicates:
-          - Path=/organization/**
+            - Path=/organization/**
           filters:
-          - RewritePath=/organization/(?<path>.*), /$\{path}
+            - RewritePath=/organization/(?<path>.*), /$\{path}
+        - id: graphql-service
+          uri: lb://localhost:8087
+          predicates:
+            - Path=/graphql/**
+          filters:
+            - RewritePath=/graphql/(?<path>.*), /$\{path}
         - id: licensing-service
-          uri: lb://licensing-service
+          uri: lb://localhost:8080
           predicates:
-          - Path=/license/**
+            - Path=/license/**
           filters:
-          - RewritePath=/license/(?<path>.*), /$\{path}
+            - RewritePath=/license/(?<path>.*), /$\{path}
 
 
-       
+
 management:
   endpoints:
     web:
