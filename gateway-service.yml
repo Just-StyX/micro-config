@@ -46,4 +46,4 @@ management:
       enabled: true
     web:
       exposure:
-        include: "*"
+        include: gateway
