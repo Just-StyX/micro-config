@@ -5,4 +5,4 @@ spring:
   datasource:
     url: jdbc:postgresql://license-service-postgres:5432/license-db
     username: username
-    password: password
+    password: {cypher}d5767c40014b2352872ec17cbf390b1084d1d8c6ad56f9c9d621eb3bf0d2c022
