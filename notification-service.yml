@@ -1,0 +1,10 @@
+application:
+  contact:
+    email: contact@jsl-group.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
