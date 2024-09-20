@@ -4,5 +4,5 @@ example:
 spring:
   datasource:
     url: jdbc:postgresql://license-service-postgres:5432/license-db
-    username: {cipher}f2dd141ed6ad89384fa1f40a5d5b7e29fca70ac99981b61a283a26bf2dad52b3
+    username: username
     password: {cipher}d5767c40014b2352872ec17cbf390b1084d1d8c6ad56f9c9d621eb3bf0d2c022
