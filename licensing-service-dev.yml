@@ -6,3 +6,8 @@ spring:
     url: jdbc:postgresql://license-service-postgres:5432/license-db
     username: username
     password: password
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

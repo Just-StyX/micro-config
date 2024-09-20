@@ -8,3 +8,6 @@ management:
       exposure:
         include: "*"
     enabled-by-default: true
+
+server:
+  port: 8072
