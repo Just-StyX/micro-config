@@ -13,7 +13,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   mail:
-    host: localhost
+    host: macbookpro.lan
     port: 1025
     username: user
     password: user
@@ -24,6 +24,6 @@ spring:
         auth: true
         starttls:
           enable: true
-        connectiontimeout: 5000
-        timeout: 3000
-        writetimeout: 5000
+#        connectiontimeout: 5000
+#        timeout: 3000
+#        writetimeout: 5000
