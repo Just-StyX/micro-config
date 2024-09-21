@@ -13,7 +13,7 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
   mail:
-    host: localhost
+    host: mail-dev
     port: 1025
     username: user
     password: user
