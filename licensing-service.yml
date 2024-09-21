@@ -25,6 +25,3 @@ management:
       exposure:
         include: "*"
     enabled-by-default: true
-
-application:
-  email-topic: license

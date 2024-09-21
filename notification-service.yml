@@ -1,6 +1,7 @@
 application:
   contact:
     email: contact@jsl-group.com
+  email-topic: license
 
 management:
   endpoints:
