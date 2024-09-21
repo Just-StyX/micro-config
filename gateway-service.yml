@@ -1,5 +1,5 @@
 server:
-  port: 8072
+  port: 8074
 
 eureka:
   instance:
@@ -8,23 +8,25 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://eureka-service:8073/eureka/
 
 
 spring:
   cloud:
-    loadbalancer.ribbon.enabled: false
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
       # discovery.locator:
       #   enabled: true
       #   lowerCaseServiceId: true
       routes:
-        - id: organization-service
-          uri: http://localhost:8081
+        - id: notification-service
+          uri: http://notification-service:8072
           predicates:
-            - Path=/organization/**
+            - Path=/notification/**
           filters:
-            - RewritePath=/organization/(?<path>.*), /$\{path}
+            - RewritePath=/notification/(?<path>.*), /$\{path}
         - id: graphql-service
           uri: http://localhost:8087
           predicates:
@@ -32,7 +34,7 @@ spring:
           filters:
             - RewritePath=/graphql/(?<path>.*), /$\{path}
         - id: licensing-service
-          uri: http://localhost:8083
+          uri: http://licensing-service:8080
           predicates:
             - Path=/license/**
           filters:
