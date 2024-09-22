@@ -22,7 +22,7 @@ spring:
       #   lowerCaseServiceId: true
       routes:
         - id: notification-service
-          uri: http://notification-service:8072
+          uri: lb://notification-service
           predicates:
             - Path=/notification/**
           filters:
@@ -34,7 +34,7 @@ spring:
           filters:
             - RewritePath=/graphql/(?<path>.*), /$\{path}
         - id: licensing-service
-          uri: http://licensing-service:8080
+          uri: lb://licensing-service
           predicates:
             - Path=/license/**
           filters:
